@@ -1,0 +1,32 @@
+seed: 42
+eval_steps: 50
+
+model:
+  name: ddpm
+  params:
+    image_size: 64
+    in_channels: 1
+    num_steps: 1000
+    base_channels: 64
+    channel_mults: [1, 2, 4]
+    num_classes: 9
+
+dataset:
+  name: wm811k
+  root: data/WM-811K
+  image_size: 64
+
+training:
+  epochs: 100
+  batch_size: 64
+  num_workers: 4
+  lr: 2.0e-4
+  betas: [0.9, 0.999]
+  weight_decay: 0.0
+  amp: true
+  grad_accum_steps: 1
+  grad_clip: 1.0
+  ema_decay: 0.9999
+  log_every: 50
+  wandb: false
+  wandb_project: defectgen

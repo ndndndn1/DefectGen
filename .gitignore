@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# DefectGen artifacts (not for distribution)
+# Anchored to repo root so src/data/ (library code) is NOT matched.
+/runs/
+/generated/
+/wandb/
+/data/
+*.pt
+*.ckpt
+
+# export/: showcase artifacts for GitHub (PNG + ONNX, including external weights)
+/export/*
+!/export/*.png
+!/export/*.onnx
+!/export/*.onnx.data
+
+# Logs
+*.log
+logs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
